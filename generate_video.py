@@ -7,6 +7,8 @@ load_dotenv()
 
 API_KEY = os.getenv("CREATOMATE_API_KEY")
 
+TEMPLATE_ID = "d16a8d5d-3166-40f5-9475-28ba75c3040f"
+
 url = "https://api.creatomate.com/v1/renders"
 
 headers = {
@@ -25,16 +27,19 @@ videos = []
 for scene in scenes:
 
     payload = {
-        "template_id": "YOUR_TEMPLATE_ID",
+        "source": {
+            "type": "template",
+            "id": TEMPLATE_ID
+        },
+        "output_format": "mp4",
         "modifications": {
-            "title": scene["title"],
-            "narration": scene["narration"],
-            "text": scene["on_screen_text"]
+            "title.text": scene["title"],
+            "Text.text": scene["on_screen_text"],
+            "narration.text": scene["narration"]
         }
     }
 
     response = requests.post(url, headers=headers, json=payload)
-
     videos.append(response.json())
 
 print(videos)
