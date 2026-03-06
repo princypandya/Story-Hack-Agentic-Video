@@ -1,0 +1,500 @@
+{
+  "project_metadata": {
+    "title": "Data Privacy Lab: Mastering Encryption Techniques",
+    "duration_minutes": 2,
+    "total_duration_seconds": 120,
+    "total_scenes": 12,
+    "course": "3CS12D103 - Data Privacy",
+    "topic": "Encrypting/Decrypting Files Using Symmetric and Asymmetric Encryption"
+  },
+  "scenes": [
+    {
+      "scene_id": 1,
+      "title": "Opening Scene",
+      "narration": "Welcome to this comprehensive video on data privacy! Today, we're exploring encryption techniques from a research paper. This video is approximately 2 minutes long. Let's dive in!",
+      "visuals": [
+        "title_screen.png",
+        "lock_key_animation.gif"
+      ],
+      "on_screen_text": "Data Privacy Lab: Mastering Encryption Techniques",
+      "document_elements": [],
+      "duration_seconds": 24,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 2,
+      "title": "Encryption and Decryption Using OpenSSL",
+      "narration": "In this section, we demonstrate the process of encrypting and decrypting a file using the OpenSSL command-line tool with the AES-256-CBC symmetric encryption algorithm.\n\n## Step 1: Create a File\n\nFirst, we create a text file named `secrets.txt` containing the string \"hello world\":\n\n```bash\n$ echo 'hello world' > secrets.txt\n```\n\n## Step 2: Encrypt the File\n\nNext, we encrypt the file using the AES-256-CBC algorithm. The command used is as follows:\n\n```bash\n$ openssl aes-256-cbc -e -in secrets.txt -out secrets.txt.enc\n```\n\nDuring this process, the user is prompted to enter a password for encryption:\n\n```\nenter aes-256-cbc encryption password:\nVerifying - enter aes-256-cbc encryption password:\n```\n\nAfter successful encryption, we can verify the existence of the encrypted file by listing the files in the directory:\n\n```bash\n$ ls -l\n```\n\nThe output will show the original and encrypted files:\n\n```\ntotal 8\n-rw-r--r--.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 1: Encryption and Decryption Using OpenSSL",
+      "document_elements": [
+        {
+          "type": "code_block",
+          "content": "$ echo 'hello world' > secrets.txt",
+          "id": "code_0"
+        },
+        {
+          "type": "code_block",
+          "content": "$ openssl aes-256-cbc -e -in secrets.txt -out secrets.txt.enc",
+          "id": "code_1"
+        },
+        {
+          "type": "code_block",
+          "content": "enter aes-256-cbc encryption password:\nVerifying - enter aes-256-cbc encryption password:",
+          "id": "code_2"
+        },
+        {
+          "type": "code_block",
+          "content": "$ ls -l",
+          "id": "code_3"
+        },
+        {
+          "type": "code_block",
+          "content": "total 8\n-rw-r--r--.  1 root root 12 Mar  9 17:50 secrets.txt\n-rw-r--r--.  1 root root 32 Mar  9 17:50 secrets.txt.enc",
+          "id": "code_4"
+        },
+        {
+          "type": "code_block",
+          "content": "$ openssl aes-256-cbc -d -in secrets.txt.enc -out secrets.txt.dec",
+          "id": "code_5"
+        },
+        {
+          "type": "code_block",
+          "content": "enter aes-256-cbc decryption password:",
+          "id": "code_6"
+        },
+        {
+          "type": "code_block",
+          "content": "$ cat secrets.txt.dec",
+          "id": "code_7"
+        },
+        {
+          "type": "code_block",
+          "content": "hello world",
+          "id": "code_8"
+        },
+        {
+          "type": "formula",
+          "content": "Mathematical concepts discussed",
+          "id": "formula_1"
+        }
+      ],
+      "duration_seconds": 8,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 3,
+      "title": "Encryption and Decryption Using OpenSSL",
+      "narration": "In this section, we will discuss how to use OpenSSL for symmetric encryption and decryption of files. We will demonstrate the process using a key file for enhanced security.\n\n## Step 1: Create a Key File\n\nFirst, we need to generate a random key file that will be used for encryption and decryption.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 2: Encryption and Decryption Using OpenSSL",
+      "document_elements": [
+        {
+          "type": "code_block",
+          "content": "$ openssl rand 128 > symmetric_keyfile.key",
+          "id": "code_0"
+        },
+        {
+          "type": "code_block",
+          "content": "$ ll",
+          "id": "code_1"
+        },
+        {
+          "type": "code_block",
+          "content": "total 8\n-rw-r--r--.  1 root root  12 Mar  9 18:45 secrets.txt\n-rw-r--r--.  1 root root  128 Mar  9 18:46 symmetric_keyfile.key",
+          "id": "code_2"
+        },
+        {
+          "type": "code_block",
+          "content": "$ openssl enc -in secrets.txt -out secrets.txt.enc -e -aes256 -k symmetric_keyfile.key",
+          "id": "code_3"
+        },
+        {
+          "type": "code_block",
+          "content": "$ ll | grep secrets.txt.enc",
+          "id": "code_4"
+        },
+        {
+          "type": "code_block",
+          "content": "-rw-r--r--.  1 root root  32 Mar  9 18:48 secrets.txt.enc",
+          "id": "code_5"
+        },
+        {
+          "type": "code_block",
+          "content": "$ openssl enc -in secrets.txt.enc -out secrets_decrypted.txt -d -aes256 -k symmetric_keyfile.key",
+          "id": "code_6"
+        },
+        {
+          "type": "formula",
+          "content": "Mathematical concepts discussed",
+          "id": "formula_1"
+        },
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 8,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 4,
+      "title": "Asymmetric Encryption",
+      "narration": "## Introduction\n\nIn the realm of data security, encryption plays a crucial role in protecting sensitive information. This paper discusses the process of encrypting and decrypting data using asymmetric encryption, specifically focusing on the RSA algorithm, which is widely regarded as the industry standard.\n\n## Asymmetric Encryption Overview\n\nAsymmetric encryption utilizes a pair of keys: a public key for encryption and a private key for decryption.",
+      "visuals": [
+        "public_private_keys.png",
+        "key_pair_animation.gif"
+      ],
+      "on_screen_text": "Section 3: Asymmetric Encryption",
+      "document_elements": [
+        {
+          "type": "code_block",
+          "content": "$ openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048",
+          "id": "code_0"
+        },
+        {
+          "type": "code_block",
+          "content": "$ openssl enc -in secrets.txt -out secrets.txt.enc -e -aes256 -k symmetric_keyfile.key",
+          "id": "code_1"
+        },
+        {
+          "type": "code_block",
+          "content": "$ openssl enc -in secrets.txt.enc -out secrets.txt.decrypted -d -aes256 -k symmetric_keyfile.key",
+          "id": "code_2"
+        },
+        {
+          "type": "code_block",
+          "content": "$ cat secrets.txt.decrypted",
+          "id": "code_3"
+        },
+        {
+          "type": "code_block",
+          "content": "hello world",
+          "id": "code_4"
+        },
+        {
+          "type": "formula",
+          "content": "Mathematical concepts discussed",
+          "id": "formula_1"
+        }
+      ],
+      "duration_seconds": 8,
+      "animation": "slide_in_right",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 5,
+      "title": "Title: Generation and Management of Private Keys in Cryptographic Systems",
+      "narration": "## Abstract\nThis paper discusses the process of generating and managing private keys in cryptographic systems, focusing on the creation of a private key file and its implications for security. We provide a detailed examination of the private key format, its structure, and the importance of secure key management practices.\n\n## 1.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 4: Title: Generation and Management of Private Keys in Cryptographic Systems",
+      "document_elements": [
+        {
+          "type": "code_block",
+          "content": "$ openssl genpkey -algorithm RSA -out private_key.pem",
+          "id": "code_0"
+        },
+        {
+          "type": "code_block",
+          "content": "$ ll\ntotal 4\n-rw-r--r--. 1 root root 1704 Mar  8 13:32 private_key.pem",
+          "id": "code_1"
+        },
+        {
+          "type": "code_block",
+          "content": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC4Du/lM5d8/jym\n...\n-----END PRIVATE KEY-----",
+          "id": "code_2"
+        },
+        {
+          "type": "formula",
+          "content": "Mathematical concepts discussed",
+          "id": "formula_1"
+        },
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 8,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 6,
+      "title": "Generating Public Key from Private Key",
+      "narration": "In cryptographic systems, a private key is used to encrypt data, while a public key is used to decrypt it. The relationship between these keys is fundamental to asymmetric encryption.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 5: Generating Public Key from Private Key",
+      "document_elements": [
+        {
+          "type": "code_block",
+          "content": "-----BEGIN PRIVATE KEY-----\n4+pdAbo+gDMjXUltX6fSwVHn/e0BegvuZr9tsZm7Z4kLBgleQ6seO8ByPXpRmIU0\nMcTXOpdC+1QriQ/270b+IQ48zlefFQktdEAB2OnuE2v9/759jQ3CMjDddyUXpw3S\n1h3pzSSSBDGAeiUVz3kPsg+mYwKBgQDL9nqxn5JZgB",
+          "id": "code_0"
+        },
+        {
+          "type": "code_block",
+          "content": "$ openssl rsa -pubout -in private_key.pem -out public_key.pem",
+          "id": "code_1"
+        },
+        {
+          "type": "formula",
+          "content": "Mathematical concepts discussed",
+          "id": "formula_1"
+        }
+      ],
+      "duration_seconds": 8,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 7,
+      "title": "Writing RSA Key",
+      "narration": "Notice that the public key is generated using the private key as its input. This command ended up creating the public key:\n\n```bash\n$ ll\n\ntotal 8\n-rw-r--r--.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 6: Writing RSA Key",
+      "document_elements": [
+        {
+          "type": "code_block",
+          "content": "$ ll\n\ntotal 8\n-rw-r--r--.  1  root  root  1704 Mar  8 13:32  private_key.pem\n-rw-r--r--.  1  root  root  451  Mar  8 13:34  public_key.pem",
+          "id": "code_0"
+        },
+        {
+          "type": "code_block",
+          "content": "$ cat public_key.pem\n-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuA7v5TOXfP48pg2ibneq\nIuX22XK6N7u6u8GtiTW01wbQm2pggHbAXbLN45G0jdLIY0XStV+xln4LL7WziBx4\n4dlhFDk9NquGT28DWDJOGb",
+          "id": "code_1"
+        },
+        {
+          "type": "code_block",
+          "content": "$ echo 'hello world' > PlainTextFile.txt",
+          "id": "code_2"
+        },
+        {
+          "type": "code_block",
+          "content": "$ cat PlainTextFile.txt\nhello world",
+          "id": "code_3"
+        },
+        {
+          "type": "formula",
+          "content": "Mathematical concepts discussed",
+          "id": "formula_1"
+        }
+      ],
+      "duration_seconds": 8,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 8,
+      "title": "Encrypted Data Handling with OpenSSL",
+      "narration": "In this section, we will discuss the process of encrypting and decrypting data using OpenSSL, specifically focusing on RSA encryption. We will illustrate the steps involved in creating an encrypted file and subsequently decrypting it.\n\n## 1.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 7: Encrypted Data Handling with OpenSSL",
+      "document_elements": [
+        {
+          "type": "code_block",
+          "content": "$ openssl rsautl -encrypt -inkey public_key.pem -pubin -in PlainTextFile.txt -out EncryptedData.encrypted",
+          "id": "code_0"
+        },
+        {
+          "type": "code_block",
+          "content": "$ ll\ntotal 16\n-rw-r--r--.  1 root root    256 Mar  8 13:46 EncryptedData.encrypted\n-rw-r--r--.  1 root root     12 Mar  8 13:42 PlainTextFile.txt\n-rw-r--r--.  1 root root   1704 Mar  8 13:32 private_k",
+          "id": "code_1"
+        },
+        {
+          "type": "code_block",
+          "content": "$ cat EncryptedData.encrypted",
+          "id": "code_2"
+        },
+        {
+          "type": "code_block",
+          "content": "$ openssl rsautl -decrypt -inkey private_key.pem -in EncryptedData.encrypted -out DecryptedData.txt",
+          "id": "code_3"
+        },
+        {
+          "type": "formula",
+          "content": "Mathematical concepts discussed",
+          "id": "formula_1"
+        }
+      ],
+      "duration_seconds": 8,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 9,
+      "title": "Encrypting with the Private Key and Decrypting with the Public Key",
+      "narration": "As mentioned earlier, with a public-private key pair, the role of the public key is to encrypt data so that it can only be decrypted by the private key, and the role of the private key is to only be able to decrypt data that has been encrypted by its public key counterpart. However, due to the nature of asymmetric cryptography, it is possible to do the reverse.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 8: Encrypting with the Private Key and Decrypting with the Public Key",
+      "document_elements": [
+        {
+          "type": "code_block",
+          "content": "$ ll\n\ntotal 20\n\n-rw-r--r--.  1  root root    12   Mar     8 13:59  DecryptedData.txt\n-rw-r--r--.  1  root root    256  Mar     8 13:46  EncryptedData.encrypted\n-rw-r--r--.  1  root root     12  Mar   ",
+          "id": "code_0"
+        },
+        {
+          "type": "code_block",
+          "content": "openssl rsautl -sign -in PlainTextFile.txt -out EncryptedData.encrypted -inkey private_key.pem",
+          "id": "code_1"
+        },
+        {
+          "type": "code_block",
+          "content": "openssl rsautl -verify -in EncryptedData.encrypted -out DecryptedData.txt -inkey public_key.pem -pubin",
+          "id": "code_2"
+        },
+        {
+          "type": "code_block",
+          "content": "$ cat DecryptedData.txt\nhello world\nSuccess!",
+          "id": "code_3"
+        },
+        {
+          "type": "formula",
+          "content": "Mathematical concepts discussed",
+          "id": "formula_1"
+        }
+      ],
+      "duration_seconds": 8,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 10,
+      "title": "Encrypting and Decrypting Data Using RSA Keys",
+      "narration": "In this section, we will discuss the process of encrypting and decrypting data using RSA keys, specifically focusing on the use of private and public keys. We will illustrate this with a practical example involving a plaintext file.\n\n## File Overview\n\nThe following files are present in the current directory:\n\n```\n-rw-r--r--.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 9: Encrypting and Decrypting Data Using RSA Keys",
+      "document_elements": [
+        {
+          "type": "code_block",
+          "content": "-rw-r--r--.  1  root  root  15   Mar     8 18:27  PlainTextFile.txt\n-rw-r--r--.  1  root  root  1704 Mar     8 14:21  private_key.pem\n-rw-r--r--.  1  root  root  451  Mar     8 14:29  public_key.pem",
+          "id": "code_0"
+        },
+        {
+          "type": "code_block",
+          "content": "hello world!!!",
+          "id": "code_1"
+        },
+        {
+          "type": "code_block",
+          "content": "$ cat PlainTextFile.txt | openssl rsautl -inkey private_key.pem -sign > data_thats_encrypted_with_private_key.encrypted",
+          "id": "code_2"
+        },
+        {
+          "type": "code_block",
+          "content": "$ openssl rsautl -inkey public_key.pem -pubin -in data_thats_encrypted_with_private_key.encrypted",
+          "id": "code_3"
+        },
+        {
+          "type": "code_block",
+          "content": "hello world!!!",
+          "id": "code_4"
+        },
+        {
+          "type": "formula",
+          "content": "Mathematical concepts discussed",
+          "id": "formula_1"
+        },
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 8,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 11,
+      "title": "Digital Signatures",
+      "narration": "In the process of validating a Certificate Signing Request (CSR), a digital signature plays a crucial role. The digital signature is generated by encrypting the hash of the public key with the corresponding private key.",
+      "visuals": [
+        "digital_signature.png",
+        "verification_process.gif"
+      ],
+      "on_screen_text": "Section 10: Digital Signatures",
+      "document_elements": [
+        {
+          "type": "code_block",
+          "content": "$ md5sum public_key.pem | openssl rsautl -inkey private_key.pem -sign > checksum.signed",
+          "id": "code_0"
+        },
+        {
+          "type": "code_block",
+          "content": "$ openssl rsautl -inkey public_key.pem -pubin -in checksum.signed",
+          "id": "code_1"
+        },
+        {
+          "type": "code_block",
+          "content": "$ md5sum public_key.pem",
+          "id": "code_2"
+        },
+        {
+          "type": "code_block",
+          "content": "f0be71a5a8e3cb907b4b4c2f2fc473b4  public_key.pem",
+          "id": "code_3"
+        },
+        {
+          "type": "code_block",
+          "content": "f0be71a5a8e3cb907b4b4c2f2fc473b4  public_key.pem",
+          "id": "code_4"
+        },
+        {
+          "type": "formula",
+          "content": "Mathematical concepts discussed",
+          "id": "formula_1"
+        },
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 8,
+      "animation": "zoom_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 12,
+      "title": "Conclusion",
+      "narration": "In conclusion, mastering encryption is key to data privacy. Practice these concepts regularly to strengthen your cybersecurity knowledge!",
+      "visuals": [
+        "conclusion_screen.png",
+        "call_to_action.gif"
+      ],
+      "on_screen_text": "Subscribe • Like • Comment | Resources: OpenSSL Documentation",
+      "document_elements": [],
+      "duration_seconds": 12,
+      "animation": "fade_out",
+      "transition": "fade_to_black"
+    }
+  ]
+}
