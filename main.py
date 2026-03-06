@@ -1,6 +1,8 @@
 import os
 from dotenv import load_dotenv
 from llama_parse import LlamaParse
+import json
+import re
 
 # Load the API key from your .env file
 load_dotenv()
@@ -27,9 +29,42 @@ def ingest_research_paper(file_path):
     full_text = "\n\n".join([doc.text for doc in documents])
     return full_text
 
-def generate_video_script(full_text):
+def extract_document_elements(content):
     """
-    Generates a video script from the parsed research text.
+    Extracts document elements like code blocks, tables, and formulas from content.
+    """
+    elements = []
+    
+    # Extract code blocks
+    code_blocks = re.findall(r'```[\w]*\n(.*?)\n```', content, re.DOTALL)
+    for i, code in enumerate(code_blocks):
+        elements.append({
+            "type": "code_block",
+            "content": code.strip()[:200],  # First 200 chars
+            "id": f"code_{i}"
+        })
+    
+    # Extract mathematical formulas or special formatting
+    if "formula" in content.lower() or "$" in content:
+        elements.append({
+            "type": "formula",
+            "content": "Mathematical concepts discussed",
+            "id": "formula_1"
+        })
+    
+    # Extract tables (simple detection)
+    if "table" in content.lower() or "|" in content:
+        elements.append({
+            "type": "table",
+            "content": "Data table from research",
+            "id": "table_1"
+        })
+    
+    return elements
+
+def generate_video_script_json(full_text):
+    """
+    Generates a video script in JSON format from the parsed research text.
     Takes video duration from user and structures the script accordingly.
     """
     # Ask for video duration
@@ -42,40 +77,107 @@ def generate_video_script(full_text):
     # Split the text into sections based on markdown headers
     sections = full_text.split('\n# ')
     
-    script_parts = []
+    scenes = []
+    total_duration_seconds = duration_minutes * 60
     
-    # Introduction (allocate ~20% time)
-    intro_time = duration_minutes * 0.2
-    script_parts.append(f"[Opening Scene: Upbeat music plays. Title screen appears: 'Data Privacy Lab: Mastering Encryption Techniques' | Duration: ~{intro_time:.1f} min]\n\nNarrator: Welcome to this comprehensive video on data privacy! Today, we're exploring encryption techniques from a research paper. This video is approximately {duration_minutes} minutes long. Let's dive in!\n")
+    # Scene 1: Opening
+    intro_duration = int(total_duration_seconds * 0.2)
+    scenes.append({
+        "scene_id": 1,
+        "title": "Opening Scene",
+        "narration": f"Welcome to this comprehensive video on data privacy! Today, we're exploring encryption techniques from a research paper. This video is approximately {duration_minutes} minutes long. Let's dive in!",
+        "visuals": ["title_screen.png", "lock_key_animation.gif"],
+        "on_screen_text": "Data Privacy Lab: Mastering Encryption Techniques",
+        "document_elements": [],
+        "duration_seconds": intro_duration,
+        "animation": "fade_in",
+        "transition": "dissolve"
+    })
     
-    # Process sections
-    num_sections = len(sections) - 1  # Skip first if not header
-    section_time = (duration_minutes * 0.7) / num_sections if num_sections > 0 else 0
+    # Process content sections
+    num_sections = len(sections) - 1
+    section_duration = int(total_duration_seconds * 0.7 / num_sections) if num_sections > 0 else 0
     
-    for i, section in enumerate(sections[1:], 1):  # Skip the first part
+    scene_id = 2
+    for i, section in enumerate(sections[1:], 1):
         lines = section.split('\n')
         header = lines[0].strip()
         content = '\n'.join(lines[1:]).strip()
         
-        # Basic summarization: extract first 2-3 sentences
+        # Extract first 2-3 sentences as narration
         sentences = content.split('. ')
-        summary_sentences = sentences[:3]  # Take first 3 sentences
-        summary = '. '.join(summary_sentences) + '.' if summary_sentences else content[:300] + '...'
+        summary_sentences = sentences[:2]
+        narration = '. '.join(summary_sentences) + '.' if summary_sentences else content[:300]
         
-        section_title = "Symmetric Encryption" if "Symmetric" in header else ("Asymmetric Encryption" if "Asymmetric" in header or "Public-Key" in header else ("Digital Signatures" if "Signature" in header else header))
+        # Determine section type and visual
+        if "Symmetric" in header:
+            section_title = "Symmetric Encryption"
+            visuals = ["symmetric_key.png", "lock_unlock_box.gif"]
+            animation = "slide_in_left"
+        elif "Asymmetric" in header or "Public-Key" in header:
+            section_title = "Asymmetric Encryption"
+            visuals = ["public_private_keys.png", "key_pair_animation.gif"]
+            animation = "slide_in_right"
+        elif "Signature" in header:
+            section_title = "Digital Signatures"
+            visuals = ["digital_signature.png", "verification_process.gif"]
+            animation = "zoom_in"
+        else:
+            section_title = header
+            visuals = ["diagram.png", "demo.gif"]
+            animation = "fade_in"
         
-        script_parts.append(f"[Section {i}: {section_title} | Duration: ~{section_time:.1f} min]\n\nNarrator: {summary}\n\n[Visual: Relevant animations and demos]\n")
+        # Extract document elements
+        doc_elements = extract_document_elements(content)
+        
+        scenes.append({
+            "scene_id": scene_id,
+            "title": section_title,
+            "narration": narration,
+            "visuals": visuals,
+            "on_screen_text": f"Section {i}: {section_title}",
+            "document_elements": doc_elements,
+            "duration_seconds": section_duration,
+            "animation": animation,
+            "transition": "cut" if i % 2 == 0 else "dissolve"
+        })
+        
+        scene_id += 1
     
-    # Conclusion (allocate ~10% time)
-    conclusion_time = duration_minutes * 0.1
-    script_parts.append(f"[Conclusion | Duration: ~{conclusion_time:.1f} min]\n\nNarrator: In conclusion, mastering encryption is key to data privacy. Practice these concepts!\n\n[End screen: Call to action - Subscribe, like, and comment. Resources: OpenSSL docs]\n\n[Outro music fades out]\n")
+    # Scene: Conclusion
+    conclusion_duration = int(total_duration_seconds * 0.1)
+    scenes.append({
+        "scene_id": scene_id,
+        "title": "Conclusion",
+        "narration": "In conclusion, mastering encryption is key to data privacy. Practice these concepts regularly to strengthen your cybersecurity knowledge!",
+        "visuals": ["conclusion_screen.png", "call_to_action.gif"],
+        "on_screen_text": "Subscribe • Like • Comment | Resources: OpenSSL Documentation",
+        "document_elements": [],
+        "duration_seconds": conclusion_duration,
+        "animation": "fade_out",
+        "transition": "fade_to_black"
+    })
     
-    script = '\n'.join(script_parts)
+    # Create the complete JSON structure
+    video_script = {
+        "project_metadata": {
+            "title": "Data Privacy Lab: Mastering Encryption Techniques",
+            "duration_minutes": duration_minutes,
+            "total_duration_seconds": total_duration_seconds,
+            "total_scenes": len(scenes),
+            "course": "3CS12D103 - Data Privacy",
+            "topic": "Encrypting/Decrypting Files Using Symmetric and Asymmetric Encryption"
+        },
+        "scenes": scenes
+    }
     
-    # Save to file
-    with open("video_script.txt", "w", encoding="utf-8") as f:
-        f.write(script)
-    print(f"\nSuccess! Video script saved to 'video_script.txt' (Total duration: ~{duration_minutes} min)")
+    # Save to JSON file
+    with open("video_script.json", "w", encoding="utf-8") as f:
+        json.dump(video_script, f, indent=2, ensure_ascii=False)
+    
+    print(f"\nSuccess! JSON video script saved to 'video_script.json'")
+    print(f"Total scenes: {len(scenes)}")
+    print(f"Total duration: {duration_minutes} minutes ({total_duration_seconds} seconds)")
 
 if __name__ == "__main__":
     # Path to your file as shown in your folder structure
@@ -96,7 +198,7 @@ if __name__ == "__main__":
             f.write(research_text)
             print("\nSuccess! Text also saved to 'parsed_output.md'")
         
-        # Generate the video script
-        generate_video_script(research_text)
+        # Generate the video script in JSON format
+        generate_video_script_json(research_text)
     else:
         print(f"Error: Could not find {paper_path}. Please check your folder structure.")
