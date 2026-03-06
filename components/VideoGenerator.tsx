@@ -1,53 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-
-interface VideoGeneratorProps {
-  onScriptGenerated: (script: any) => void;
-  onGenerating: (isGenerating: boolean) => void;
-  onProgress: (message: string) => void;
-}
-
-export function VideoGenerator({ onScriptGenerated, onGenerating, onProgress }: VideoGeneratorProps) {
-  const [isLoading, setIsLoading] = useState(false);
-  const [pdfFile, setPdfFile] = useState<File | null>(null);
-  const [duration, setDuration] = useState('10');
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setPdfFile(e.target.files[0]);
-    }
-  };
-
-  const handleGenerateScript = async () => {
-    if (!pdfFile) {
-      alert('Please select a PDF file');
-      return;
-    }
-
-    setIsLoading(true);
-    onGenerating(true);
-    onProgress('Uploading and parsing PDF...');
-
-    try {
-      const formData = new FormData();
-      formData.append('file', pdfFile);
-      formData.append('duration', duration);
-
-      const response = await fetch('/api/generate-script', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (!response.ok) throw new Error('Failed to generate script');
-
-      const data = await response.json();
-      onProgress('Script generated successfully!');
-      onScriptGenerated(data.script);
-    } catch (error) {
-      console.error('Error:', error);
-      onProgress('Error generating script');
-      alert('Failed to generate script. Check console for details.');
+// Placeholder component - functionality moved to main page
+export function VideoGenerator() {
+  return null;
     } finally {
       setIsLoading(false);
       onGenerating(false);
