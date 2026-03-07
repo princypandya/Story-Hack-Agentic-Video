@@ -1,9 +1,9 @@
 {
   "project_metadata": {
     "title": "Data Privacy Lab: Mastering Encryption Techniques",
-    "duration_minutes": 2,
-    "total_duration_seconds": 120,
-    "total_scenes": 12,
+    "duration_minutes": 1,
+    "total_duration_seconds": 60,
+    "total_scenes": 40,
     "course": "3CS12D103 - Data Privacy",
     "topic": "Encrypting/Decrypting Files Using Symmetric and Asymmetric Encryption"
   },
@@ -11,479 +11,670 @@
     {
       "scene_id": 1,
       "title": "Opening Scene",
-      "narration": "Welcome to this comprehensive video on data privacy! Today, we're exploring encryption techniques from a research paper. This video is approximately 2 minutes long. Let's dive in!",
+      "narration": "Welcome to this comprehensive video on data privacy! Today, we're exploring encryption techniques from a research paper. This video is approximately 1 minutes long. Let's dive in!",
       "visuals": [
         "title_screen.png",
         "lock_key_animation.gif"
       ],
       "on_screen_text": "Data Privacy Lab: Mastering Encryption Techniques",
       "document_elements": [],
-      "duration_seconds": 24,
+      "duration_seconds": 12,
       "animation": "fade_in",
       "transition": "dissolve"
     },
     {
       "scene_id": 2,
-      "title": "Encryption and Decryption Using OpenSSL",
-      "narration": "In this section, we demonstrate the process of encrypting and decrypting a file using the OpenSSL command-line tool with the AES-256-CBC symmetric encryption algorithm.\n\n## Step 1: Create a File\n\nFirst, we create a text file named `secrets.txt` containing the string \"hello world\":\n\n```bash\n$ echo 'hello world' > secrets.txt\n```\n\n## Step 2: Encrypt the File\n\nNext, we encrypt the file using the AES-256-CBC algorithm. The command used is as follows:\n\n```bash\n$ openssl aes-256-cbc -e -in secrets.txt -out secrets.txt.enc\n```\n\nDuring this process, the user is prompted to enter a password for encryption:\n\n```\nenter aes-256-cbc encryption password:\nVerifying - enter aes-256-cbc encryption password:\n```\n\nAfter successful encryption, we can verify the existence of the encrypted file by listing the files in the directory:\n\n```bash\n$ ls -l\n```\n\nThe output will show the original and encrypted files:\n\n```\ntotal 8\n-rw-r--r--.",
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "**XUBIN WANG**, Hong Kong Baptist University, Hong Kong, Hong Kong, Beijing Normal Hong Kong Baptist University, Zhuhai, China, and Beijing Normal University, Zhuhai, China\n**ZHIQING TANG**, Beijing Normal University, Zhuhai, China\n**JIANXIONG GUO**, Beijing Normal University, Zhuhai, China and Beijing Normal Hong Kong Baptist University, Zhuhai, China\n**TIANHUI MENG**, Beijing Normal Hong Kong Baptist University, Zhuhai, China\n**CHENHAO WANG**, Beijing Normal University, Zhuhai, China and Beijing Normal Hong Kong Baptist University, Zhuhai, China\n**TIAN WANG**, Beijing Normal University, Zhuhai, China\n**WEIJIA JIA**, Beijing Normal University, Zhuhai, China and Beijing Normal Hong Kong Baptist University, Zhuhai, China\n\nThe rapid advancement of artificial intelligence (AI) technologies has led to an increasing deployment of AI models on edge and terminal devices, driven by the proliferation of the Internet of Things (IoT) and the need for real-time data processing. This survey comprehensively explores the current state, technical challenges, and future trends of on-device AI models.",
       "visuals": [
         "diagram.png",
         "demo.gif"
       ],
-      "on_screen_text": "Section 1: Encryption and Decryption Using OpenSSL",
-      "document_elements": [
-        {
-          "type": "code_block",
-          "content": "$ echo 'hello world' > secrets.txt",
-          "id": "code_0"
-        },
-        {
-          "type": "code_block",
-          "content": "$ openssl aes-256-cbc -e -in secrets.txt -out secrets.txt.enc",
-          "id": "code_1"
-        },
-        {
-          "type": "code_block",
-          "content": "enter aes-256-cbc encryption password:\nVerifying - enter aes-256-cbc encryption password:",
-          "id": "code_2"
-        },
-        {
-          "type": "code_block",
-          "content": "$ ls -l",
-          "id": "code_3"
-        },
-        {
-          "type": "code_block",
-          "content": "total 8\n-rw-r--r--.  1 root root 12 Mar  9 17:50 secrets.txt\n-rw-r--r--.  1 root root 32 Mar  9 17:50 secrets.txt.enc",
-          "id": "code_4"
-        },
-        {
-          "type": "code_block",
-          "content": "$ openssl aes-256-cbc -d -in secrets.txt.enc -out secrets.txt.dec",
-          "id": "code_5"
-        },
-        {
-          "type": "code_block",
-          "content": "enter aes-256-cbc decryption password:",
-          "id": "code_6"
-        },
-        {
-          "type": "code_block",
-          "content": "$ cat secrets.txt.dec",
-          "id": "code_7"
-        },
-        {
-          "type": "code_block",
-          "content": "hello world",
-          "id": "code_8"
-        },
-        {
-          "type": "formula",
-          "content": "Mathematical concepts discussed",
-          "id": "formula_1"
-        }
-      ],
-      "duration_seconds": 8,
+      "on_screen_text": "Section 1: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [],
+      "duration_seconds": 1,
       "animation": "fade_in",
       "transition": "dissolve"
     },
     {
       "scene_id": 3,
-      "title": "Encryption and Decryption Using OpenSSL",
-      "narration": "In this section, we will discuss how to use OpenSSL for symmetric encryption and decryption of files. We will demonstrate the process using a key file for enhanced security.\n\n## Step 1: Create a Key File\n\nFirst, we need to generate a random key file that will be used for encryption and decryption.",
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "**Xubin Wang, Zhiqing Tang, Jianxiong Guo, Tianhui Meng, Chenhao Wang, Tian Wang, and Weijia Jia**\n**ACM Reference Format:**\nXubin Wang, Zhiqing Tang, Jianxiong Guo, Tianhui Meng, Chenhao Wang, Tian Wang, and Weijia Jia. 2025.",
       "visuals": [
         "diagram.png",
         "demo.gif"
       ],
-      "on_screen_text": "Section 2: Encryption and Decryption Using OpenSSL",
+      "on_screen_text": "Section 2: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
       "document_elements": [
-        {
-          "type": "code_block",
-          "content": "$ openssl rand 128 > symmetric_keyfile.key",
-          "id": "code_0"
-        },
-        {
-          "type": "code_block",
-          "content": "$ ll",
-          "id": "code_1"
-        },
-        {
-          "type": "code_block",
-          "content": "total 8\n-rw-r--r--.  1 root root  12 Mar  9 18:45 secrets.txt\n-rw-r--r--.  1 root root  128 Mar  9 18:46 symmetric_keyfile.key",
-          "id": "code_2"
-        },
-        {
-          "type": "code_block",
-          "content": "$ openssl enc -in secrets.txt -out secrets.txt.enc -e -aes256 -k symmetric_keyfile.key",
-          "id": "code_3"
-        },
-        {
-          "type": "code_block",
-          "content": "$ ll | grep secrets.txt.enc",
-          "id": "code_4"
-        },
-        {
-          "type": "code_block",
-          "content": "-rw-r--r--.  1 root root  32 Mar  9 18:48 secrets.txt.enc",
-          "id": "code_5"
-        },
-        {
-          "type": "code_block",
-          "content": "$ openssl enc -in secrets.txt.enc -out secrets_decrypted.txt -d -aes256 -k symmetric_keyfile.key",
-          "id": "code_6"
-        },
-        {
-          "type": "formula",
-          "content": "Mathematical concepts discussed",
-          "id": "formula_1"
-        },
         {
           "type": "table",
           "content": "Data table from research",
           "id": "table_1"
         }
       ],
-      "duration_seconds": 8,
+      "duration_seconds": 1,
       "animation": "fade_in",
       "transition": "cut"
     },
     {
       "scene_id": 4,
-      "title": "Asymmetric Encryption",
-      "narration": "## Introduction\n\nIn the realm of data security, encryption plays a crucial role in protecting sensitive information. This paper discusses the process of encrypting and decrypting data using asymmetric encryption, specifically focusing on the RSA algorithm, which is widely regarded as the industry standard.\n\n## Asymmetric Encryption Overview\n\nAsymmetric encryption utilizes a pair of keys: a public key for encryption and a private key for decryption.",
-      "visuals": [
-        "public_private_keys.png",
-        "key_pair_animation.gif"
-      ],
-      "on_screen_text": "Section 3: Asymmetric Encryption",
-      "document_elements": [
-        {
-          "type": "code_block",
-          "content": "$ openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048",
-          "id": "code_0"
-        },
-        {
-          "type": "code_block",
-          "content": "$ openssl enc -in secrets.txt -out secrets.txt.enc -e -aes256 -k symmetric_keyfile.key",
-          "id": "code_1"
-        },
-        {
-          "type": "code_block",
-          "content": "$ openssl enc -in secrets.txt.enc -out secrets.txt.decrypted -d -aes256 -k symmetric_keyfile.key",
-          "id": "code_2"
-        },
-        {
-          "type": "code_block",
-          "content": "$ cat secrets.txt.decrypted",
-          "id": "code_3"
-        },
-        {
-          "type": "code_block",
-          "content": "hello world",
-          "id": "code_4"
-        },
-        {
-          "type": "formula",
-          "content": "Mathematical concepts discussed",
-          "id": "formula_1"
-        }
-      ],
-      "duration_seconds": 8,
-      "animation": "slide_in_right",
-      "transition": "dissolve"
-    },
-    {
-      "scene_id": 5,
-      "title": "Title: Generation and Management of Private Keys in Cryptographic Systems",
-      "narration": "## Abstract\nThis paper discusses the process of generating and managing private keys in cryptographic systems, focusing on the creation of a private key file and its implications for security. We provide a detailed examination of the private key format, its structure, and the importance of secure key management practices.\n\n## 1.",
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## 1.1 Definition of On-device AI Models\n\nOn-device AI models refer to AI models that are designed, trained, and deployed on edge or terminal devices. These models can perform data processing and inference locally without the need to transmit data to the cloud for processing [38, 225].",
       "visuals": [
         "diagram.png",
         "demo.gif"
       ],
-      "on_screen_text": "Section 4: Title: Generation and Management of Private Keys in Cryptographic Systems",
+      "on_screen_text": "Section 3: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
       "document_elements": [
-        {
-          "type": "code_block",
-          "content": "$ openssl genpkey -algorithm RSA -out private_key.pem",
-          "id": "code_0"
-        },
-        {
-          "type": "code_block",
-          "content": "$ ll\ntotal 4\n-rw-r--r--. 1 root root 1704 Mar  8 13:32 private_key.pem",
-          "id": "code_1"
-        },
-        {
-          "type": "code_block",
-          "content": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC4Du/lM5d8/jym\n...\n-----END PRIVATE KEY-----",
-          "id": "code_2"
-        },
-        {
-          "type": "formula",
-          "content": "Mathematical concepts discussed",
-          "id": "formula_1"
-        },
         {
           "type": "table",
           "content": "Data table from research",
           "id": "table_1"
         }
       ],
-      "duration_seconds": 8,
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 5,
+      "title": "On-Device AI: A Comprehensive Survey",
+      "narration": "## X. Wang et al.\n\n### Fundamental Concepts\n\n#### 1.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 4: On-Device AI: A Comprehensive Survey",
+      "document_elements": [],
+      "duration_seconds": 1,
       "animation": "fade_in",
       "transition": "cut"
     },
     {
       "scene_id": 6,
-      "title": "Generating Public Key from Private Key",
-      "narration": "In cryptographic systems, a private key is used to encrypt data, while a public key is used to decrypt it. The relationship between these keys is fundamental to asymmetric encryption.",
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## Table 1. List of Edge Devices and Their Features [44]\n\n| Device                          | Key Features                                           | Use Cases                             |\n|---------------------------------|-------------------------------------------------------|---------------------------------------|\n| NVIDIA Jetson Xavier NX        | 6-core ARM CPU, 384-core GPU, 21 TOPS AI performance | Robotics, computer vision             |\n| Google Coral Dev Board         | Edge TPU, 4 TOPS, low power consumption (2–4 W)      | Image recognition, object detection   |\n| Raspberry Pi 4                  | Quad-core ARM CPU, up to 8 GB RAM, dual 4K HDMI output | IoT applications, home automation     |\n| AWS DeepLens                   | Intel Atom processor, integrated HD camera            | Real-time computer vision             |\n| Intel NUC                      | Compact form factor, supports up to i7 processors     | Digital signage, industrial automation |\n| Microsoft Azure Stack Edge     | Hybrid solution with GPU options                       | AI inferencing, video analytics       |\n| HPE Edgeline EL300            | Rugged design, Intel Xeon/Core processors              | Industrial applications                |\n| Lenovo ThinkEdge SE50          | Intel Core i5/i7, rugged design                        | Smart cities, retail applications      |\n| Dell EMC PowerEdge XE2420      | Dual Xeon processors, ruggedized chassis               | Edge computing in harsh environments   |\n| Advantech MIC-770              | Modular design, high-performance computing capabilities | Industrial edge applications           |\n\nThe exploration of offloading in edge systems is crucial for optimizing the performance of on-device AI models.",
       "visuals": [
         "diagram.png",
         "demo.gif"
       ],
-      "on_screen_text": "Section 5: Generating Public Key from Private Key",
+      "on_screen_text": "Section 5: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
       "document_elements": [
         {
-          "type": "code_block",
-          "content": "-----BEGIN PRIVATE KEY-----\n4+pdAbo+gDMjXUltX6fSwVHn/e0BegvuZr9tsZm7Z4kLBgleQ6seO8ByPXpRmIU0\nMcTXOpdC+1QriQ/270b+IQ48zlefFQktdEAB2OnuE2v9/759jQ3CMjDddyUXpw3S\n1h3pzSSSBDGAeiUVz3kPsg+mYwKBgQDL9nqxn5JZgB",
-          "id": "code_0"
-        },
-        {
-          "type": "code_block",
-          "content": "$ openssl rsa -pubout -in private_key.pem -out public_key.pem",
-          "id": "code_1"
-        },
-        {
-          "type": "formula",
-          "content": "Mathematical concepts discussed",
-          "id": "formula_1"
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
         }
       ],
-      "duration_seconds": 8,
+      "duration_seconds": 1,
       "animation": "fade_in",
       "transition": "dissolve"
     },
     {
       "scene_id": 7,
-      "title": "Writing RSA Key",
-      "narration": "Notice that the public key is generated using the private key as its input. This command ended up creating the public key:\n\n```bash\n$ ll\n\ntotal 8\n-rw-r--r--.",
+      "title": "AI Models and Their Deployment: A Comparative Analysis",
+      "narration": "## X. Wang et al.\n\n### Table 2.",
       "visuals": [
         "diagram.png",
         "demo.gif"
       ],
-      "on_screen_text": "Section 6: Writing RSA Key",
+      "on_screen_text": "Section 6: AI Models and Their Deployment: A Comparative Analysis",
       "document_elements": [
         {
-          "type": "code_block",
-          "content": "$ ll\n\ntotal 8\n-rw-r--r--.  1  root  root  1704 Mar  8 13:32  private_key.pem\n-rw-r--r--.  1  root  root  451  Mar  8 13:34  public_key.pem",
-          "id": "code_0"
-        },
-        {
-          "type": "code_block",
-          "content": "$ cat public_key.pem\n-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuA7v5TOXfP48pg2ibneq\nIuX22XK6N7u6u8GtiTW01wbQm2pggHbAXbLN45G0jdLIY0XStV+xln4LL7WziBx4\n4dlhFDk9NquGT28DWDJOGb",
-          "id": "code_1"
-        },
-        {
-          "type": "code_block",
-          "content": "$ echo 'hello world' > PlainTextFile.txt",
-          "id": "code_2"
-        },
-        {
-          "type": "code_block",
-          "content": "$ cat PlainTextFile.txt\nhello world",
-          "id": "code_3"
-        },
-        {
-          "type": "formula",
-          "content": "Mathematical concepts discussed",
-          "id": "formula_1"
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
         }
       ],
-      "duration_seconds": 8,
+      "duration_seconds": 1,
       "animation": "fade_in",
       "transition": "cut"
     },
     {
       "scene_id": 8,
-      "title": "Encrypted Data Handling with OpenSSL",
-      "narration": "In this section, we will discuss the process of encrypting and decrypting data using OpenSSL, specifically focusing on RSA encryption. We will illustrate the steps involved in creating an encrypted file and subsequently decrypting it.\n\n## 1.",
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## 2.2 How On-device AI Works\n\nThe process of implementing on-device AI involves a comprehensive pipeline that encompasses data processing, model development, and system integration, as illustrated in Figure 2. This figure provides an overview of the key components and workflow involved in deploying AI models at the edge device, highlighting the interplay between data, model, and system optimization.\n\n### 2.2.1 Data Preprocessing\n\nThe first step in the on-device AI pipeline is data collection, which involves gathering raw data from various sources [238].",
       "visuals": [
         "diagram.png",
         "demo.gif"
       ],
-      "on_screen_text": "Section 7: Encrypted Data Handling with OpenSSL",
+      "on_screen_text": "Section 7: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
       "document_elements": [
-        {
-          "type": "code_block",
-          "content": "$ openssl rsautl -encrypt -inkey public_key.pem -pubin -in PlainTextFile.txt -out EncryptedData.encrypted",
-          "id": "code_0"
-        },
-        {
-          "type": "code_block",
-          "content": "$ ll\ntotal 16\n-rw-r--r--.  1 root root    256 Mar  8 13:46 EncryptedData.encrypted\n-rw-r--r--.  1 root root     12 Mar  8 13:42 PlainTextFile.txt\n-rw-r--r--.  1 root root   1704 Mar  8 13:32 private_k",
-          "id": "code_1"
-        },
-        {
-          "type": "code_block",
-          "content": "$ cat EncryptedData.encrypted",
-          "id": "code_2"
-        },
-        {
-          "type": "code_block",
-          "content": "$ openssl rsautl -decrypt -inkey private_key.pem -in EncryptedData.encrypted -out DecryptedData.txt",
-          "id": "code_3"
-        },
         {
           "type": "formula",
           "content": "Mathematical concepts discussed",
           "id": "formula_1"
+        },
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
         }
       ],
-      "duration_seconds": 8,
+      "duration_seconds": 1,
       "animation": "fade_in",
       "transition": "dissolve"
     },
     {
       "scene_id": 9,
-      "title": "Encrypting with the Private Key and Decrypting with the Public Key",
-      "narration": "As mentioned earlier, with a public-private key pair, the role of the public key is to encrypt data so that it can only be decrypted by the private key, and the role of the private key is to only be able to decrypt data that has been encrypted by its public key counterpart. However, due to the nature of asymmetric cryptography, it is possible to do the reverse.",
+      "title": "Applications of AI in Modern Technologies",
+      "narration": "## 3.1 Smartphones\nSmartphones have integrated various AI applications that enhance user experience and functionality. Key applications include:\n\n- **Voice Assistants**: Devices like Apple’s Siri, Google Assistant, and Amazon’s Alexa utilize Natural Language Processing (NLP) to understand and respond to user voice commands, thereby enhancing user interaction and accessibility [45, 129].\n\n- **Image Recognition**: Camera applications on smartphones employ AI models for facial recognition, scene identification, and image enhancement, significantly improving photography quality [141, 237].\n\n- **Personalized Recommendations**: By analyzing user behavior and preferences, smartphones can provide tailored app recommendations and content suggestions, thereby enhancing user engagement [168].\n\n- **Health Monitoring**: Some smartphones are equipped with sensors that monitor health metrics such as heart rate and step count.",
       "visuals": [
         "diagram.png",
         "demo.gif"
       ],
-      "on_screen_text": "Section 8: Encrypting with the Private Key and Decrypting with the Public Key",
-      "document_elements": [
-        {
-          "type": "code_block",
-          "content": "$ ll\n\ntotal 20\n\n-rw-r--r--.  1  root root    12   Mar     8 13:59  DecryptedData.txt\n-rw-r--r--.  1  root root    256  Mar     8 13:46  EncryptedData.encrypted\n-rw-r--r--.  1  root root     12  Mar   ",
-          "id": "code_0"
-        },
-        {
-          "type": "code_block",
-          "content": "openssl rsautl -sign -in PlainTextFile.txt -out EncryptedData.encrypted -inkey private_key.pem",
-          "id": "code_1"
-        },
-        {
-          "type": "code_block",
-          "content": "openssl rsautl -verify -in EncryptedData.encrypted -out DecryptedData.txt -inkey public_key.pem -pubin",
-          "id": "code_2"
-        },
-        {
-          "type": "code_block",
-          "content": "$ cat DecryptedData.txt\nhello world\nSuccess!",
-          "id": "code_3"
-        },
-        {
-          "type": "formula",
-          "content": "Mathematical concepts discussed",
-          "id": "formula_1"
-        }
-      ],
-      "duration_seconds": 8,
+      "on_screen_text": "Section 8: Applications of AI in Modern Technologies",
+      "document_elements": [],
+      "duration_seconds": 1,
       "animation": "fade_in",
       "transition": "cut"
     },
     {
       "scene_id": 10,
-      "title": "Encrypting and Decrypting Data Using RSA Keys",
-      "narration": "In this section, we will discuss the process of encrypting and decrypting data using RSA keys, specifically focusing on the use of private and public keys. We will illustrate this with a practical example involving a plaintext file.\n\n## File Overview\n\nThe following files are present in the current directory:\n\n```\n-rw-r--r--.",
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## 3. Applications of AI Models\n\n### 3.4 Autonomous Vehicles\nAI models play a crucial role in the development and operation of autonomous vehicles, enhancing their capabilities in various aspects:\n\n- **Environmental Perception**: AI models analyze sensor data to identify surrounding objects (e.g., pedestrians, vehicles, traffic signs), ensuring safe driving and navigation [247].\n- **Path Planning**: By analyzing traffic conditions and map data in real time, AI models can plan optimal driving routes for autonomous vehicles, improving travel efficiency [93, 104].\n- **Decision-making**: In complex traffic environments, AI models assist autonomous systems in making quick decisions regarding lane changes, acceleration, or deceleration, enhancing safety [55, 104].\n- **Vehicle-to-everything (V2X)**: Through communication with other vehicles and infrastructure, AI models optimize traffic flow and enhance road safety, contributing to smarter transportation systems [104, 142].\n\n### 3.5 Medical Devices and Health Monitoring\nThe application of AI models in medical devices and health monitoring is rapidly growing:\n\n- **Disease Diagnosis**: AI models analyze medical images (e.g., X-rays, CT scans, MRIs) to assist doctors in diagnosing diseases with improved accuracy and efficiency, facilitating timely interventions [197].\n- **Personalized Treatment**: By analyzing patient health data and genetic information, AI models help physicians develop personalized treatment plans tailored to individual needs, enhancing patient outcomes [113].\n- **Remote Monitoring**: Wearable devices (e.g., smartwatches) use AI models to monitor health indicators (e.g., heart rate, blood pressure) in real time while providing health recommendations, promoting proactive health management [201].\n- **Drug Development**: In drug discovery processes, AI models screen potential drug molecules to accelerate the identification and development of new medications, streamlining the research and development pipeline [139].\n\n## 4.",
       "visuals": [
         "diagram.png",
         "demo.gif"
       ],
-      "on_screen_text": "Section 9: Encrypting and Decrypting Data Using RSA Keys",
-      "document_elements": [
-        {
-          "type": "code_block",
-          "content": "-rw-r--r--.  1  root  root  15   Mar     8 18:27  PlainTextFile.txt\n-rw-r--r--.  1  root  root  1704 Mar     8 14:21  private_key.pem\n-rw-r--r--.  1  root  root  451  Mar     8 14:29  public_key.pem",
-          "id": "code_0"
-        },
-        {
-          "type": "code_block",
-          "content": "hello world!!!",
-          "id": "code_1"
-        },
-        {
-          "type": "code_block",
-          "content": "$ cat PlainTextFile.txt | openssl rsautl -inkey private_key.pem -sign > data_thats_encrypted_with_private_key.encrypted",
-          "id": "code_2"
-        },
-        {
-          "type": "code_block",
-          "content": "$ openssl rsautl -inkey public_key.pem -pubin -in data_thats_encrypted_with_private_key.encrypted",
-          "id": "code_3"
-        },
-        {
-          "type": "code_block",
-          "content": "hello world!!!",
-          "id": "code_4"
-        },
-        {
-          "type": "formula",
-          "content": "Mathematical concepts discussed",
-          "id": "formula_1"
-        },
-        {
-          "type": "table",
-          "content": "Data table from research",
-          "id": "table_1"
-        }
-      ],
-      "duration_seconds": 8,
+      "on_screen_text": "Section 9: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [],
+      "duration_seconds": 1,
       "animation": "fade_in",
       "transition": "dissolve"
     },
     {
       "scene_id": 11,
-      "title": "Digital Signatures",
-      "narration": "In the process of validating a Certificate Signing Request (CSR), a digital signature plays a crucial role. The digital signature is generated by encrypting the hash of the public key with the corresponding private key.",
+      "title": "Optimization Algorithms for Edge AI",
+      "narration": "## 4.1.3 Optimization Algorithms\nTo align with the computational capabilities of edge devices, researchers must develop efficient algorithms and model compression techniques. Approaches such as pruning [79], quantization [48], and knowledge distillation [242] are essential for reducing computational burdens without significantly compromising accuracy.\n\n- **Pruning** involves removing less important weights or neurons from a model to streamline its architecture.\n- **Quantization** reduces the precision of the numbers used in computations (e.g., converting floating-point weights to integers), which decreases memory usage and speeds up inference times.\n- **Knowledge Distillation** allows a smaller model to learn from a larger model’s outputs, effectively transferring knowledge while maintaining performance.\n\nAdditionally, leveraging parameter sharing [151, 217] and other optimization strategies can further enhance the efficiency of AI models on these constrained devices.\n\n## 4.2 Storage and Memory Limitations\nThe storage and memory resources of edge devices are often limited, presenting significant challenges for the deployment and operation of AI models.\n\n### 4.2.1 Storage Space\nMany AI models, particularly state-of-the-art deep learning models, require substantial storage space to accommodate model parameters and intermediate results [15].",
       "visuals": [
-        "digital_signature.png",
-        "verification_process.gif"
+        "diagram.png",
+        "demo.gif"
       ],
-      "on_screen_text": "Section 10: Digital Signatures",
+      "on_screen_text": "Section 10: Optimization Algorithms for Edge AI",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 12,
+      "title": "On-device Computation and Data Privacy in Edge AI",
+      "narration": "## 4.4.3 On-device Computation\nOn-device computation is a technique that facilitates real-time responses at the edge [62]. By performing computations directly on the edge device, only relevant data needs to be transmitted to the cloud, which reduces communication costs and enables faster response times [24].",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 11: On-device Computation and Data Privacy in Edge AI",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 13,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## 4.6 Challenges in Edge AI Deployment\n\n### 4.6.1 Cross-device Migration\nAI models must be capable of running on various types of devices, including migrating from high-performance servers to resource-constrained mobile devices. Achieving efficient migration while maintaining performance and accuracy presents a significant challenge [104].",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 12: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
       "document_elements": [
-        {
-          "type": "code_block",
-          "content": "$ md5sum public_key.pem | openssl rsautl -inkey private_key.pem -sign > checksum.signed",
-          "id": "code_0"
-        },
-        {
-          "type": "code_block",
-          "content": "$ openssl rsautl -inkey public_key.pem -pubin -in checksum.signed",
-          "id": "code_1"
-        },
-        {
-          "type": "code_block",
-          "content": "$ md5sum public_key.pem",
-          "id": "code_2"
-        },
-        {
-          "type": "code_block",
-          "content": "f0be71a5a8e3cb907b4b4c2f2fc473b4  public_key.pem",
-          "id": "code_3"
-        },
-        {
-          "type": "code_block",
-          "content": "f0be71a5a8e3cb907b4b4c2f2fc473b4  public_key.pem",
-          "id": "code_4"
-        },
-        {
-          "type": "formula",
-          "content": "Mathematical concepts discussed",
-          "id": "formula_1"
-        },
         {
           "type": "table",
           "content": "Data table from research",
           "id": "table_1"
         }
       ],
-      "duration_seconds": 8,
-      "animation": "zoom_in",
+      "duration_seconds": 1,
+      "animation": "fade_in",
       "transition": "cut"
     },
     {
-      "scene_id": 12,
+      "scene_id": 14,
+      "title": "Data Optimization Operations for On-Device AI",
+      "narration": "## Overview\n\nIn the context of on-device AI, various data optimization operations are crucial for enhancing the quality of data collected for AI models. These operations include data filtering, feature extraction, data aggregation, data quantization, and the implementation of edge computing frameworks.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 13: Data Optimization Operations for On-Device AI",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 15,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## 5.1.5 Edge Computing Frameworks\nEdge computing frameworks like AWS Greengrass and Azure IoT Edge facilitate the processing of data closer to its source, thereby reducing the need for extensive data transfer and minimizing latency in real-time applications [157]. An example includes an adaptive region-of-interest-based image compression scheme that enables rapid target detection within IoT setups [60].",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 14: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 16,
+      "title": "Resource-Efficient Techniques for On-Device AI",
+      "narration": "## 5.2.2 Parameter Sharing\n\nParameter sharing is a highly effective model compression technique that plays a crucial role in the development of on-device AI models [17]. By reusing weights across multiple layers, this method significantly reduces the computational and memory demands of neural networks, enabling efficient deployment on devices with limited resources without incurring substantial losses in accuracy [143].",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 15: Resource-Efficient Techniques for On-Device AI",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 17,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## 5.2.3 Pruning Techniques\n\nRecent advancements in pruning strategies have demonstrated how deep neural networks (DNNs) can be optimized for efficient operation on edge devices without compromising their core functionality. For instance, the discrete channel optimization technique developed by Gao et al.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 16: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 18,
+      "title": "Knowledge Distillation and Low-rank Factorization in Edge AI",
+      "narration": "## 5.2.5 Knowledge Distillation\n\nKnowledge distillation is a pivotal model compression technique that enhances the deployment of Deep Neural Networks (DNNs) on resource-constrained edge devices by transferring knowledge from a large, complex teacher model to a smaller, more efficient student model [17]. Originally introduced by Hinton et al.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 17: Knowledge Distillation and Low-rank Factorization in Edge AI",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 19,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## 5.2.7 Hardware-aware Neural Architecture Search\n\nNeural Architecture Search (NAS) has emerged as a crucial technique for designing neural networks tailored for edge device deployment, where constraints such as energy efficiency, low latency, and limited computational capacity are critical [123]. The rapid expansion of the Internet of Things (IoT) and AI of Things (AIoT) has created a demand for smart, low-power, and efficient devices.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 18: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 20,
+      "title": "Lightweight Deep Learning Models for Edge Devices",
+      "narration": "## 5.2 Lightweight Model Architectures\n\nAmong the most prominent lightweight models, the MobileNets series has demonstrated high performance on mobile and embedded devices by employing depth-separable convolutions that decrease computation while maintaining accuracy. For instance, MobileNetV1 achieves a 70.6% top-1 accuracy on the ImageNet dataset with only 569 million Multiply-Accumulate Operations (MACs), a significant reduction compared to traditional networks [74].",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 19: Lightweight Deep Learning Models for Edge Devices",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 21,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## Software Optimization Approaches\n\nSoftware optimization approaches for on-device AI can be categorized into two main areas:\n\n1. **On-device AI Learning Frameworks**: These frameworks facilitate model training and deployment on mobile and edge devices.\n2.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 20: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 22,
+      "title": "Hardware and Software Optimization for Edge AI",
+      "narration": "## 5.3.1 Software Optimization\n\nRecent advancements in software optimization techniques have significantly enhanced the efficiency of deep learning models, particularly for Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs). Notable frameworks such as Pipe-it [206] and SCA [246] have implemented strategies like kernel parallelization and secure computation, respectively, to improve CNN inference throughput while ensuring model integrity.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 21: Hardware and Software Optimization for Edge AI",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 23,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## 6 Future Development Trends\n\n### 6.1 Impact of Emerging Technologies\n\nThe rapid advancement of emerging technologies is poised to significantly influence the application and performance of AI models deployed on various devices. Key technologies such as 5G, edge computing, and foundation models will play critical roles in shaping the future landscape of AI.\n\n#### 6.1.1 5G and Beyond\n\nThe rollout of more advanced networks like 5G, characterized by high bandwidth and low latency, is set to enhance the real-time processing capabilities of AI models on devices [92].",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 22: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 24,
+      "title": "Future Directions in AI Model Development",
+      "narration": "## 6.1 Edge Computing and Foundation Models\n\n### 6.1.1 Data Transmission Reduction\nMinimizing the amount of data transmitted to the cloud is a critical aspect of edge computing [172]. This reduction not only lowers data transmission costs but also enhances data privacy protection by keeping sensitive information local [256].\n\n### 6.1.2 Foundation Models\nFoundation models represent a significant leap in AI technology due to their ability to be pretrained on extensive datasets and subsequently fine-tuned for specific tasks [227].",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 23: Future Directions in AI Model Development",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 25,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## 6.3.2 Resource Sharing and Circular Utilization\nAI models operating on devices will promote resource sharing and circular utilization practices that minimize resource waste [101]. Collaborative cloud–edge computing architectures allow devices to dynamically access cloud resources as needed, optimizing overall resource utilization efficiency [43].",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 24: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 26,
+      "title": "X. Wang et al.",
+      "narration": "## 7 Conclusion\n\n### 7.1 Main Findings of the Survey\nThis survey investigates the fundamental concepts, application scenarios, technical challenges, and optimization and implementation methods associated with AI models deployed on devices. The key findings are summarized as follows:\n\n- **Diverse Application Scenarios**: AI models on devices exhibit extensive application potential across a multitude of domains, including smartphones, IoT devices, edge computing, autonomous driving, and medical devices.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 25: X. Wang et al.",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 27,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## 7.3 Potential Impacts and Prospects of AI Models on Devices\n\nThe widespread integration of AI models into various devices is expected to bring about significant transformations across multiple dimensions, including societal, economic, and technological realms. As these intelligent systems become increasingly embedded in everyday life, their influence will extend beyond mere convenience, fundamentally reshaping how individuals interact with technology and each other.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 26: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 28,
+      "title": "References",
+      "narration": "[3] Alibaba. 2018.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 27: References",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 29,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## References\n\n[25] H. Cheng, M.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 28: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 30,
+      "title": "References",
+      "narration": "[48] Yonggan Fu, Haoran You, Yang Zhao, Yue Wang, Chaojian Li, Kailash Gopalakrishnan, Zhangyang Wang, and Yingyan Lin. 2020.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 29: References",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 31,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## References\n\n[69] Vahideh Hayyolalam, Moayad Aloqaily, Öznur Özkasap, and Mohsen Guizani. 2021.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 30: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 32,
+      "title": "References",
+      "narration": "[90] Matt Kusner, Stephen Tyree, Kilian Weinberger, and Kunal Agrawal. 2014.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 31: References",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 33,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## References\n\n[113] Yang Liu, Zhuo Ma, Ximeng Liu, Siqi Ma, and Kui Ren. 2019.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 32: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 34,
+      "title": "References",
+      "narration": "[139] Marissa Mock, Suzanne Edavettal, Christopher Langmead, and Alan Russell. 2023.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 33: References",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 35,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## References\n\n[161] Tie Qiu, Jiancheng Chi, Xiaobo Zhou, Zhaolong Ning, Mohammed Atiquzzaman, and Dapeng Oliver Wu. 2020.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 34: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 36,
+      "title": "References",
+      "narration": "[182] Danfeng Sun, Jia Wu, Jian Yang, and Huifeng Wu. 2021.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 35: References",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 37,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## References\n\n[205] Rui Wang, Zhihua Wei, Haoran Duan, Shouling Ji, Yang Long, and Zhen Hong. 2022.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 36: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 38,
+      "title": "References",
+      "narration": "[226] Zirui Xu, Fuxun Yu, Zhuwei Qin, Chenchen Liu, and Xiang Chen. 2020.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 37: References",
+      "document_elements": [],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "dissolve"
+    },
+    {
+      "scene_id": 39,
+      "title": "Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "narration": "## Abstract\nThe rapid advancement of artificial intelligence (AI) has led to the emergence of edge intelligence, where AI models are deployed directly on devices at the edge of the network. This survey provides a comprehensive overview of on-device AI models, focusing on their architecture, optimization techniques, applications, and the challenges faced in their deployment.",
+      "visuals": [
+        "diagram.png",
+        "demo.gif"
+      ],
+      "on_screen_text": "Section 38: Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models",
+      "document_elements": [
+        {
+          "type": "table",
+          "content": "Data table from research",
+          "id": "table_1"
+        }
+      ],
+      "duration_seconds": 1,
+      "animation": "fade_in",
+      "transition": "cut"
+    },
+    {
+      "scene_id": 40,
       "title": "Conclusion",
       "narration": "In conclusion, mastering encryption is key to data privacy. Practice these concepts regularly to strengthen your cybersecurity knowledge!",
       "visuals": [
@@ -492,7 +683,7 @@
       ],
       "on_screen_text": "Subscribe • Like • Comment | Resources: OpenSSL Documentation",
       "document_elements": [],
-      "duration_seconds": 12,
+      "duration_seconds": 6,
       "animation": "fade_out",
       "transition": "fade_to_black"
     }

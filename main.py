@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from llama_parse import LlamaParse
 import json
 import re
+import fitz
 
 # Load the API key from your .env file
 load_dotenv()
@@ -179,9 +180,36 @@ def generate_video_script_json(full_text):
     print(f"Total scenes: {len(scenes)}")
     print(f"Total duration: {duration_minutes} minutes ({total_duration_seconds} seconds)")
 
+def extract_images_from_pdf(pdf_path):
+    doc = fitz.open(pdf_path)
+
+    os.makedirs("assets", exist_ok=True)
+
+    images = []
+
+    for page_index in range(len(doc)):
+        page = doc[page_index]
+
+        for img_index, img in enumerate(page.get_images()):
+            xref = img[0]
+            base_image = doc.extract_image(xref)
+            image_bytes = base_image["image"]
+
+            image_filename = f"assets/image_{page_index}_{img_index}.png"
+
+            with open(image_filename, "wb") as img_file:
+                img_file.write(image_bytes)
+
+            images.append(image_filename)
+
+    return images
+
 if __name__ == "__main__":
     # Path to your file as shown in your folder structure
     paper_path = "./data/paper.pdf"
+    # Extract images from the research paper
+    images = extract_images_from_pdf(paper_path)
+    print("Extracted images:", images)
     
     if os.path.exists(paper_path):
         # Run the conversion
